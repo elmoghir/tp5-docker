@@ -1,0 +1,52 @@
+Started by user [8mha:////4GI0G3VOQmbjU1s1hJCtvNsnRS6UoGn1GuJDcbX9W+fFAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyREgZu/dLi1CL9xJTczDwAKOUF0MAAAAA=[0mabdessamad el moghir
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/El Moghir Job 1
+The recommended git tool is: NONE
+No credentials specified
+Cloning the remote Git repository
+Cloning repository https://github.com/elmoghir/tp5-docker
+ > git init /var/jenkins_home/workspace/El Moghir Job 1 # timeout=10
+Fetching upstream changes from https://github.com/elmoghir/tp5-docker
+ > git --version # timeout=10
+ > git --version # 'git version 2.39.5'
+ > git fetch --tags --force --progress -- https://github.com/elmoghir/tp5-docker +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/elmoghir/tp5-docker # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+Avoid second fetch
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision a85096bb3cda1e3591c9c1a7e357fc287472f100 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f a85096bb3cda1e3591c9c1a7e357fc287472f100 # timeout=10
+Commit message: "first commit"
+First time build. Skipping changelog.
+[El Moghir Job 1] $ docker build -t abdessamadh/tp5-virtualisation --pull=true "/var/jenkins_home/workspace/El Moghir Job 1"
+ERROR: Cannot run program "docker" (in directory "/var/jenkins_home/workspace/El Moghir Job 1"): error=2, No such file or directory
+java.io.IOException: Cannot run program "docker" (in directory "/var/jenkins_home/workspace/El Moghir Job 1"): error=2, No such file or directory
+	at java.base/java.lang.ProcessBuilder.start(Unknown Source)
+	at java.base/java.lang.ProcessBuilder.start(Unknown Source)
+	at hudson.Proc$LocalProc.<init>(Proc.java:252)
+	at hudson.Proc$LocalProc.<init>(Proc.java:221)
+	at hudson.Launcher$LocalLauncher.launch(Launcher.java:995)
+	at hudson.Launcher$ProcStarter.start(Launcher.java:507)
+	at PluginClassLoader for docker-build-publish//com.cloudbees.dockerpublish.DockerBuilder$Perform.executeCmd(DockerBuilder.java:489)
+	at PluginClassLoader for docker-build-publish//com.cloudbees.dockerpublish.DockerBuilder$Perform.executeCmd(DockerBuilder.java:431)
+	at PluginClassLoader for docker-build-publish//com.cloudbees.dockerpublish.DockerBuilder$Perform.buildAndTag(DockerBuilder.java:373)
+	at PluginClassLoader for docker-build-publish//com.cloudbees.dockerpublish.DockerBuilder$Perform.exec(DockerBuilder.java:311)
+	at PluginClassLoader for docker-build-publish//com.cloudbees.dockerpublish.DockerBuilder$Perform.access$100(DockerBuilder.java:291)
+	at PluginClassLoader for docker-build-publish//com.cloudbees.dockerpublish.DockerBuilder.perform(DockerBuilder.java:262)
+	at hudson.tasks.BuildStepMonitor$1.perform(BuildStepMonitor.java:20)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:818)
+	at hudson.model.Build$BuildExecution.build(Build.java:199)
+	at hudson.model.Build$BuildExecution.doRun(Build.java:164)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.run(AbstractBuild.java:527)
+	at hudson.model.Run.execute(Run.java:1833)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:44)
+	at hudson.model.ResourceController.execute(ResourceController.java:101)
+	at hudson.model.Executor.run(Executor.java:446)
+Caused by: java.io.IOException: error=2, No such file or directory
+	at java.base/java.lang.ProcessImpl.forkAndExec(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(Unknown Source)
+	at java.base/java.lang.ProcessImpl.start(Unknown Source)
+	... 21 more
+Build step 'Docker Build and Publish' marked build as failure
+Finished: FAILURE
